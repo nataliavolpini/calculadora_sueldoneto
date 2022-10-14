@@ -1,0 +1,193 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(2, 2, 34);
+}
+
+.barra{
+    background-color: rgb(46, 44, 44);
+    height: 100px;
+    
+}
+/*Inicio comienza*/
+
+.calculadora{
+    height: 800px;
+}
+
+.calculadora h2{
+    color: white;
+}
+
+.subir {
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    text-align: center;
+    line-height: 40px;
+    color: rgb(2, 2, 34);
+    border-radius: 50%;
+    font-size: 22px;
+}
+
+/*Quienes somos comienza*/
+
+
+
+.conocenos{
+    display: grid;
+}
+
+.hleft{
+    background-image: url(./assets/imagenes/foto_natalia.PNG) ;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 550px;
+}
+
+.hleft h2{
+    padding-top: 10px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.hright {
+    padding: 20px;
+    height: auto;
+}
+.hright h2 {
+    text-align: center;
+    height: auto;
+    font-family: "Dancing Script", cursive;
+    color: white;
+}
+.hright p {
+    padding-top: 20px;
+    font-family: "Libre Franklin", sans-serif;
+    color: white;
+}
+
+footer {
+    display: grid;
+    background-color: rgb(46, 44, 44);
+    height: auto;
+}
+
+.redes {
+    margin: 10px 0 10px 0;
+    text-transform: capitalize;
+    text-align: center;
+    color: white;
+}
+.redes img {
+    height: 100px;
+    width: 100px;
+}
+.redes a {
+    color: white;
+    letter-spacing: 10px;
+}
+.redes h2 {
+font-size: 20px;
+}
+
+.menu {
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    text-align: center;
+}
+.menu a {
+    text-decoration: none;
+    color: white;
+}
+.menu a:hover {
+    color: white;
+}
+
+.contactanos {
+    text-align: center;
+    color: white;
+}
+.contactanos h2 {
+    font-size: 15px;
+}
+
+a:hover {
+    color: rgba(255, 255, 255, 0.308);
+}
+
+.copyright {
+    margin: 20px 0 20px 0;
+    font-size: 15px;
+    color: white;
+    text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+/*Lo que hacemos - Inicia*/
+.conocenos {
+    grid-template-columns: 1fr 1fr;
+}
+.hright {
+    grid-column: 2/3;
+}
+.hleft {
+    grid-column: 1/2;
+}
+.hleft {
+    height: auto;
+}
+footer {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+.menuf {
+    grid-column: 1/2;
+}
+.redes {
+    grid-column: 2/3;
+    margin-top: 20px;
+}
+.contactanos {
+    grid-column: 3/4;
+}
+.copyright {
+    grid-column: 2/3;
+}
+
+}
+
+@media only screen and (min-width: 1024px){
+footer {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 70% 30%;
+    height: 200px;
+}
+.menuf {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    margin-top: 80px;
+    font-size: 15px;
+}
+    .redes {
+    grid-column: 2/3;
+    font-size: 20px;
+}
+.contactanos {
+    margin-top: 80px;
+}
+.contactanos h2 {
+    font-size: 20px;
+}
+.contactanos .copyright p {
+    font-size: 20px;
+}    
+}
