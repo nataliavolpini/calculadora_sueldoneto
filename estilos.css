@@ -1,8 +1,10 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Pacifico&display=swap");
 * {
     margin: 0;
     padding: 0;
 }
+
+
 
 body{
     background-color: rgb(2, 2, 34);
@@ -14,6 +16,11 @@ body{
     
 }
 /*Inicio comienza*/
+.inicio h1{
+    font-family: ' Script Swash Caps', cursive;
+}
+
+
 
 .calculadora{
     height: 800px;
@@ -131,6 +138,66 @@ a:hover {
     text-align: center;
 }
 
+/*Servicios Profesionales Inicia*/
+h1{
+    color:white;
+    text-align: center;
+    height: 100px;
+    padding-top: 25px;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card {
+    border: 2px solid grey;
+}
+
+.btn {
+    background-color: black;
+}
+
+/*Servicios Profesionales Finaliza*/
+
+/*Servicios Profesionales Finaliza*/
+
+.inicio{
+    background-color: white;
+    height: auto;
+    padding: 15px;
+}
+
+.calculadora{
+    width:auto;
+    height: auto;
+    margin: 0 50px 0 50px;
+    
+}
+
+.form-group label{
+    color: white;
+    font-size: 25px;
+    padding: 15px 0 10px 0;
+}
+
+.form-group input{
+    color: white;
+    font-size: 20px;
+    padding: 15px 0 15px 0;
+}
+
+.form-check-label{
+    color: white;
+    padding: 10px 0 10px 0;
+}
+
+h2{
+    font-size: 25px;
+}
+
+
+
 @media only screen and (min-width: 768px) {
 /*Lo que hacemos - Inicia*/
 .conocenos {
@@ -189,5 +256,11 @@ footer {
 }
 .contactanos .copyright p {
     font-size: 20px;
-}    
+} 
+/*
+.calculadora{
+    width:1000px;
+    padding-left: 500px;
+}
+*/
 }
