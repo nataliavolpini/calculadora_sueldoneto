@@ -1,6 +1,6 @@
 
 //Ingreso del sueldo bruto
-/*
+
 
 let sueldoBruto= parseFloat(prompt("Por favor ingrese su sueldo Bruto"));
 console.log("Su sueldo ingresado es " 
@@ -165,106 +165,8 @@ if (gananciaNeta*13<=97202){
 
 
 
-//Servicios Profesionales que estan disponibles para agregar al carrito
-
-//Busqueda de Servicios
-
-const servicios = [
-    {
-        tipo: "ddjj",
-        precio: 8000,
-
-    },
-
-    {
-        tipo: "monotributo",
-        precio: 5000,
-    }
-
-]
 
 
-let busquedaUsuario = prompt("Ingrese el servicio que quiere buscar");
-
-
-const busqueda = servicios.find((elemento) => elemento.tipo == busquedaUsuario);
-const carrito= [];
-
-
-
-if(busqueda!=undefined){
-    console.log(busqueda);
-}else{
-    console.log("El servicio no se encuentra disponible");
-    
-}
-
-carrito.push(busqueda);
-console.log("El carrito tiene " + carrito)
-
-
-//Precios con IVA INCLUIDO
-
-const nuevaListaServicios = carrito.map ((elemento) => {
-    return {
-        tipo: elemento.tipo.toUpperCase(),
-        precio: elemento.precio *1.21
-    }
-});
-console.log(nuevaListaServicios);
-
-
-//Calculo el total del carrito de compras
-
-const totalCompra = nuevaListaServicios.reduce((sumador, elemento) =>sumador + elemento.precio,0);
-console.log("Total a pagar $ "+ totalCompra);
-
-*/
-
-const servicios = [{
-    tipo: "ddjj",
-    precio: 8000,
-
-},
-
-{
-    tipo: "monotributo",
-    precio: 5000,
-}
-
-]
-
-let busquedaUsuario;
-const carrito = [];
-
-
-do {
-busquedaUsuario = prompt("Ingrese el servicio que desea agregar al carrito \n Si no quiere realizar otra compra ingrese la palabra *salir*");
-    const busqueda = servicios.find((elemento) => elemento.tipo == busquedaUsuario);
-    carrito.push(busqueda);
-
-    if (busquedaUsuario != "salir") {
-        const nuevaListaServicios = carrito.map((elemento) => {
-            return {
-                tipo: elemento.tipo.toUpperCase(),
-                precio: elemento.precio * 1.21
-            }
-        })
-
-        let mensaje = "Los servicios agregados al carrito son \n";
-
-        nuevaListaServicios.forEach((carritoFinal) =>{
-        mensaje= mensaje + carritoFinal.tipo + " - $  " + carritoFinal.precio + " \n ";
-        //alert("Los servicios agregados al carrito son " + carritoFinal.tipo + " - Precio $ " +carritoFinal.precio );
-        })
-
-        alert(mensaje);
-        
-            //Calculo el total del carrito de compras
-        const totalCompra = nuevaListaServicios.reduce((sumador, carritoFinal) => sumador + carritoFinal.precio, 0);
-        console.log("Total a pagar $ " + totalCompra);
-    }
-} while (busquedaUsuario != "salir");
 
 
 

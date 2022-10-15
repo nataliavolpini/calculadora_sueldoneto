@@ -139,7 +139,12 @@ a:hover {
 }
 
 /*Servicios Profesionales Inicia*/
-
+h1{
+    color:white;
+    text-align: center;
+    height: 100px;
+    padding-top: 25px;
+}
 
 .card-body {
     text-align: center;
