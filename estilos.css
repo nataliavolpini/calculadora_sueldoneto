@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Pacifico&display=swap");
+
 * {
     margin: 0;
     padding: 0;
@@ -15,11 +16,25 @@ body{
     height: 100px;
     
 }
+
 /*Inicio comienza*/
-.inicio h1{
-    font-family: ' Script Swash Caps', cursive;
+.inicio{
+    background-image: url(./assets/imagenes/fondo_numeros.webp);
+    background-size: cover;
+    background-position: center;
 }
 
+.inicio h1{
+    font-family: ' Script Swash Caps', cursive;
+    color: black;
+    padding: 5px 5px 5px 5px;
+    font-size: 30px;
+}
+
+.inicio p{
+    padding: 10px 10px 10px 10px;
+    font-weight: bold;
+}
 
 
 .calculadora{
@@ -43,6 +58,34 @@ body{
     border-radius: 50%;
     font-size: 22px;
 }
+
+.calculoFinal{
+    text-align: center;
+    color: white;
+    
+}
+
+.calculoFinal h2{
+    padding: 20px 20px 20px 20px;
+}
+
+h2{
+    padding-top: 20px;
+}
+
+#botoncalcular{
+    padding: 3px 10px 3px 10px;
+    margin-top: 20px;
+    margin-left: 40px;
+    border-radius: 10px;
+    background-color: rgb(81, 79, 79);
+    
+}
+
+#botoncalcular:hover{
+    color: yellow;
+}
+
 
 /*Quienes somos comienza*/
 
@@ -150,6 +193,10 @@ h1{
     text-align: center;
 }
 
+.card{
+    display: grid;
+    
+}
 .card {
     border: 2px solid grey;
 }
@@ -166,6 +213,7 @@ h1{
     background-color: white;
     height: auto;
     padding: 15px;
+    
 }
 
 .calculadora{
@@ -196,10 +244,26 @@ h2{
     font-size: 25px;
 }
 
+th{
+    color: white;
+}
+
+td{
+    color: white;
+}
+
+h4{
+    color: white;
+}
+
 
 
 @media only screen and (min-width: 768px) {
-/*Lo que hacemos - Inicia*/
+
+.inicio h1{
+    font-size: 45px;
+}
+    /*Lo que hacemos - Inicia*/
 .conocenos {
     grid-template-columns: 1fr 1fr;
 }
@@ -257,6 +321,12 @@ footer {
 .contactanos .copyright p {
     font-size: 20px;
 } 
+
+#cartas{
+    grid-gap: 70px;
+    padding-left: 280px;
+}
+
 /*
 .calculadora{
     width:1000px;

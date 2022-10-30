@@ -42,62 +42,63 @@
     <!-- navbar finaliza -->
     <section class="inicio">
         <h1>Calcula tu sueldo Neto de descuentos y Ganancias</h1>
-        <p>
-        
-Para el cálculo de la retención mensual del Impuesto a las Ganancias de cuarta categoría, se parte del SUELDO BRUTO, que se define como la totalidad de las retribuciones remunerativas y no remunerativas a los efectos previsionales. (no integran dicha ganancia los siguientes conceptos: Viáticos, Asignaciones Familiares, Material Didáctico, Movilidad, Ex Combatientes).
-
-A la remuneración gravada luego se le restan los aportes a la Jubilación, Obra social, y Ley 19032 (PAMI) y las deducciones generales, entre las cuales se encuentran las cuotas médico asistenciales, las prima de seguro, los alquileres, y las donaciones entre otros, para obtener así la GANANCIA NETA .
-
-A este concepto se le restan el mínimo no imponible, la deducción especial, y las cargas de familia para llegar a la GANANCIA NETA SUJETA A IMPUESTO sobre la cual se aplican las tablas para realizar el calculo de la retención a practicar.
+        <p>Para el cálculo de la retención mensual del Impuesto a las Ganancias de cuarta categoría, se parte del SUELDO BRUTO, que se define como la totalidad de las retribuciones remunerativas y no remunerativas a los efectos previsionales. (no integran dicha ganancia los siguientes conceptos: Viáticos, Asignaciones Familiares, Material Didáctico, Movilidad, Ex Combatientes).
+        A la remuneración gravada luego se le restan los aportes a la Jubilación, Obra social, y Ley 19032 (PAMI) y las deducciones generales, entre las cuales se encuentran las cuotas médico asistenciales, las prima de seguro, los alquileres, y las donaciones entre otros, para obtener así la GANANCIA NETA .
+        A este concepto se le restan el mínimo no imponible, la deducción especial, y las cargas de familia para llegar a la GANANCIA NETA SUJETA A IMPUESTO sobre la cual se aplican las tablas para realizar el calculo de la retención a practicar.
         </p>
     </section>
     <section class="calculadora">
         <div class="form-group">
             <label for="usr">Ingresa tu Sueldo Bruto</label>
-            <input type="text" class="form-control" id="usr">
+            <input id="ingresoSueldo" type="number" class="form-control" id="usr" onchange="cambioValor();">
         </div>
         <h2>Tenes Conyugue a cargo</h2>
         <div class="form-check-inline">
             <label class="form-check-label">
-                <input type="checkbox" class="form-check-input" value="">Si
+                <input id="conyugue" type="checkbox" class="form-check-input" value="">
             </label>
         </div>
+        
+        <h2>Tenes hijos menores de 18 años a cargo?</h2>
         <div class="form-check-inline">
             <label class="form-check-label">
-                <input type="checkbox" class="form-check-input" value="">No
+                <input id="hijos" type="checkbox" class="form-check-input" value="">
             </label>
         </div>
-        <h2>Cuantos hijos menores de 18 años tenes?</h2>
         <div class="form-group">
             <label for="sel1">Seleccione la Cantidad de Hijos</label>
-            <select class="form-control" id="sel1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-            </select>
+            <input id="cantidadHijos" type="number" class="form-control" id="usr" onchange="">
+            
         </div>
         <h2>¿Alquilas?</h2>
-        <div class="form-group">
-            <label for="usr">Ingresa el importe Mensual. Podes deducir el 40% con topes</label>
-            <input type="number" class="form-control" id="usr">
+        <div class="form-check-inline">
+            <label class="form-check-label">
+                <input id="alquiler" type="checkbox" class="form-check-input" value="">
+            </label>
         </div>
         <h2>¿Seguro de Vida?</h2>
-        <div class="form-group">
-            <label for="usr">Ingrese el Importe Mensual</label>
-            <input type="number" class="form-control" id="usr">
+        <div class="form-check-inline">
+            <label class="form-check-label">
+                <input id="seguroVida" type="checkbox" class="form-check-input" value="">
+            </label>
         </div>
         <h2>¿Tiene Credito Hipotecario?</h2>
-        <div class="form-group">
-            <label for="usr">Ingrese los intereses mensuales</label>
-            <input type="number" class="form-control" id="usr">
+        <div class="form-check-inline">
+            <label class="form-check-label">
+                <input id="creditoHipotecario" type="checkbox" class="form-check-input" value="">
+            </label>
         </div>
+        
     </div>
     </section>
+    <div>
+        <input id="botoncalcular" type="button" value="Calcular">
+    </div>
+
+    <div class="calculoFinal">
+        <h2 id="impuestoAPagar">Impuesto Mensual a Pagar:</h2>
+        <h2 id="sueldoACobrar">Sueldo en Mano:</h2>
+    </div>
 
     <footer>
         
