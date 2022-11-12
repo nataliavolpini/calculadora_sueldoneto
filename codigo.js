@@ -1,6 +1,5 @@
-//Validacion Ingreso Sueldo y descuentos
 
-let sueldoIngresado= document.getElementById("ingresoSueldo");
+
 let sueldoNeto=0;
 const obraSocial = 0.03;
 const inssjp = 0.03;
@@ -9,6 +8,24 @@ let impuestoFijo=0;
 let impuestoVariable=0;
 let impuestoTotal=0;
 let sueldoACobrar= 0;
+let sueldoIngresado= document.getElementById("ingresoSueldo");
+let mail= document.getElementById("mail");
+let suscribir= document.getElementById("suscribir");
+let calculo= document.getElementById("botoncalcular");
+let gananciaNeta=0;
+
+//Declaracion de deducciones
+
+const deduccionEspecial = 101026;
+const gananciaNoImponible = 21047;
+const conyugue = 19621;
+const hijo = 9895;
+const alquileres = 21047;
+const interesesHipotecarios = 1667;
+const seguroVida = 2000;
+let deducciones = deduccionEspecial+gananciaNoImponible;
+
+//Validacion Ingreso Sueldo y descuentos
 
 sueldoIngresado.onchange=()=>{
     console.log("sueldo ingresado : " + sueldoIngresado.value);
@@ -19,18 +36,7 @@ sueldoIngresado.onchange=()=>{
     
 }
 
-
 //Validacion Checkbox
-
-
-const deduccionEspecial = 101026;
-const gananciaNoImponible = 21047;
-const conyugue = 19621;
-const hijo = 9895;
-const alquileres = 21047;
-const interesesHipotecarios = 1667;
-const seguroVida = 2000;
-let deducciones = deduccionEspecial+gananciaNoImponible;
 
 
 let miCheckbox1 = document.getElementById("conyugue");
@@ -42,57 +48,47 @@ let cantidadHijos= document.getElementById("cantidadHijos");
 
 cantidadHijos.onchange=()=>{
     console.log("Cantidad de Hijos ingresados : " + cantidadHijos.value);
+    if (miCheckbox2.checked) {
+        deducciones+= ((hijo)*(cantidadHijos.value-1)) ;
+        console.log(deducciones);
+    }
 }
-
-
-
-//let cantidad = document.getElementById("sel1"); ->Ver como podemos incorporar la cantidad
-
-
 
 miCheckbox1.addEventListener('click', function() {
-if(miCheckbox1.checked) {
-    deducciones+= conyugue ;
-    console.log(deducciones)
-}
-})
+(miCheckbox1.checked) && (deducciones+=conyugue);
+console.log(deducciones)
+});
 
 miCheckbox2.addEventListener('click', function() {
-if (miCheckbox2.checked) {
-    deducciones+= hijo ;
-    console.log(deducciones);
-}
+
+(miCheckbox2.checked) && (deducciones+=hijo);
+console.log(deducciones);
 })
 
 
 miCheckbox3.addEventListener('click', function() {
-if (miCheckbox3.checked) {
-    deducciones+= seguroVida ;
-    console.log(deducciones)
-}
+    (miCheckbox3.checked) && (deducciones+=seguroVida);
+    console.log(deducciones);
+
 })
 
 miCheckbox4.addEventListener('click', function() {
-if (miCheckbox4.checked) {
-    deducciones+= interesesHipotecarios ;
-    console.log(deducciones)
-}
+
+(miCheckbox4.checked) && (deducciones+=interesesHipotecarios);
+console.log(deducciones);
+
 })
 
 miCheckbox5.addEventListener('click', function() {
-if (miCheckbox5.checked) {
-    deducciones+= alquileres ;
-    console.log(deducciones)
-}
+
+(miCheckbox5.checked) && (deducciones+=alquileres);
+console.log(deducciones);
+
 })
 
-
-let calculo= document.getElementById("botoncalcular");
-let gananciaNeta=0;
-
+//Boton Calcular
 
 calculo.addEventListener('click', function(){
-
 
     gananciaNeta= sueldoNeto- deducciones;
     console.log("Su Ganancia Neta sujeta a impuestos es: "+gananciaNeta);
@@ -179,29 +175,78 @@ calculo.addEventListener('click', function(){
     }else{
         console.log("No le corresponde pagar Impuesto fijo, ni Impuesto Variable");
     };
+
+    //Inserto los resultados
+
     document.getElementById("impuestoAPagar").innerHTML = "Impuesto Mensual a Pagar: " + "$" +(Math.ceil(impuestoTotal));
     document.getElementById("sueldoACobrar").innerHTML = "Sueldo Neto a Cobrar: " + "$" +  (Math.ceil(sueldoACobrar));
     
     if (sueldoNeto<280792){
-        document.getElementById("impuestoAPagar").innerHTML = "Impuesto Mensual a Pagar: " + "$" + "0";
+        document.getElementById("impuestoAPagar").innerHTML = "Impuesto Mensual a Pagar: " + "$" +(Math.ceil(impuestoTotal));
         document.getElementById("sueldoACobrar").innerHTML = "Sueldo Neto a Cobrar: " + "$" +  (Math.ceil(sueldoNeto));
     }
-    
-    
-    
+
+    //Funcion para limpiar los checkbox
+
     function uncheckAll() {
         document.querySelectorAll('.calculadora input[type=checkbox]').forEach(function(checkElement) {
             checkElement.checked = false;
         });
     }
 
-
+    uncheckAll();
+    
+    //Limpio los Input
+    sueldoIngresado.value="";
+    cantidadHijos.value="";
 });
 
+//Obtener valor dolar
+function obtenerDolar(){
+    const URLDOLAR="https://api.bluelytics.com.ar/v2/latest";
+    fetch(URLDOLAR)
+        .then( respuesta => respuesta.json())
+        .then( cotizaciones => {
+            const dolarOficial = cotizaciones.oficial;
+            console.log(dolarOficial);
+            document.getElementById("fila_prueba").innerHTML+=`
+            <p>💲Dolar compra: $ ${dolarOficial.value_buy} 💲Dolar venta: $ ${dolarOficial.value_sell}</p>
+            `;
+        })
+        //catch del fetch
+        .catch(error => console.log("error"))
+}
 
+obtenerDolar();
 
+//Validacion para el Newsletter
+suscribir.onclick = () => {
 
-
+    let expReg= /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    let esValido=expReg.test(mail.value);
+    if(esValido==true){
+        Toastify({
+            text: "Suscripción realizada con exito",
+            duration: 3000,
+            gravity: 'right',
+            position: 'right',
+            style: {
+                background: 'linear-gradient(to right, #00b09b, #96c92d)'
+            }
+        }).showToast()
+    }else{
+        Toastify({
+            text: "Por favor ingrese un correo válido",
+            duration: 3000,
+            gravity: 'right',
+            position: 'right',
+            style: {
+                background: 'linear-gradient(to right, #b02300, #c9922d)'
+            }
+        }).showToast()
+    }
+    mail.value="";
+}
 
 
 

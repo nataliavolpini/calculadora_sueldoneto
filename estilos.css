@@ -86,6 +86,28 @@ h2{
     color: yellow;
 }
 
+.text-center h2{
+    height: auto;
+}
+
+#fila_prueba{
+    text-align: center;
+    background-color: rgba(255, 238, 0, 0.986);
+    width: 30%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+#fila_prueba h2{
+    color: black
+}
+
+#fila_prueba p{
+    color: black;
+    padding-bottom: 15px;
+}
+
 
 /*Quienes somos comienza*/
 
@@ -165,9 +187,11 @@ font-size: 20px;
 .contactanos {
     text-align: center;
     color: white;
+    
 }
 .contactanos h2 {
     font-size: 15px;
+    
 }
 
 a:hover {
@@ -179,6 +203,17 @@ a:hover {
     font-size: 15px;
     color: white;
     text-align: center;
+}
+
+#suscribir{
+    padding: 3px 3px 3px 3px;
+    margin-bottom: 10px;
+    background-color: rgb(81, 79, 79);
+    border-radius: 10px;
+}
+
+#suscribir:hover{
+    color: yellow;
 }
 
 /*Servicios Profesionales Inicia*/
@@ -193,17 +228,40 @@ h1{
     text-align: center;
 }
 
+.card-body h4{
+    color: black;
+}
+
 .card{
     display: grid;
     
 }
 .card {
     border: 2px solid grey;
+    
 }
 
 .btn {
     background-color: black;
 }
+
+.divcompra{
+    text-align: center;
+}
+#compra{
+    padding: 5px 5px 5px 5px;
+    margin-bottom: 10px;
+    background-color: rgb(81, 79, 79);
+    border-radius: 10px;
+}
+
+#compra:hover{
+    color: yellow;
+}
+
+
+
+
 
 /*Servicios Profesionales Finaliza*/
 
@@ -250,10 +308,13 @@ th{
 
 td{
     color: white;
+    
 }
 
 h4{
     color: white;
+    text-align: center;
+    padding: 20px 0 20px 0;
 }
 
 
@@ -293,6 +354,18 @@ footer {
 .copyright {
     grid-column: 2/3;
 }
+.table-striped{
+    width: 800px;
+}
+.table-striped{
+    margin: 0 auto;
+}
+
+
+
+h4{
+    text-align: center; 
+}
 
 }
 
@@ -326,6 +399,8 @@ footer {
     grid-gap: 70px;
     padding-left: 280px;
 }
+
+
 
 /*
 .calculadora{

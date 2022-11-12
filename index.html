@@ -11,6 +11,7 @@
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="estilos.css">
     <link rel=" shortcut icon" href="./assets/imagenes/Calculator  Black App Icon.png">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <title>Sueldo Net</title>
 </head>
 <body>
@@ -100,6 +101,12 @@
         <h2 id="sueldoACobrar">Sueldo en Mano:</h2>
     </div>
 
+    <div id="fila_prueba">
+        <div>
+            <h1 class="text-center">Cotizacion Dolar</h1>
+        </div>
+    </div>
+
     <footer>
         
         <div class="redes">
@@ -117,8 +124,9 @@
             </ul><br>
         </div>
         <div class="contactanos">
-            <h2>Mandanos un mail</h2>
-            <h2>volpini.natalia@gmail.com</h2>
+            <h2>Suscribite al Newsletter con tu correo:</h2>
+            <input id="mail" type="text">
+            <input id="suscribir" type="button" value="Suscribir">
         </div>
         <div class="copyright">
             <p>Copyright &copy; 2022 Todos los derechos reservados</p>
@@ -127,7 +135,7 @@
     <a href="#" class="subir">
         <i class="fa-solid fa-angle-up"></i>
     </a>
-    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="codigo.js"></script>
 </body>
 </html>
