@@ -9,6 +9,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="estilos.css">
     <title>Servicios Profesionales</title>
 </head>
@@ -46,13 +47,14 @@
     </div>
     
     <div>
-        <h4>carrito</h4>
+        <h4>Su compra:</h4>
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>TIPO</th>
                     <th>PRECIO</th>
+                    <th>ACCION</th>
                 </tr>
             </thead>
             <tbody id="tablabody">
@@ -60,9 +62,11 @@
             </tbody>
         </table>
         <h4 id="total">Total a Pagar</h4>
+        <div class="divcompra">
+            <input id="compra" type="button" value="Finalizar Compra">
+        </div>
         
     </div>
-
     <footer>
         
         <div class="redes">
@@ -80,8 +84,9 @@
             </ul><br>
         </div>
         <div class="contactanos">
-            <h2>Mandanos un mail</h2>
-            <h2>volpini.natalia@gmail.com</h2>
+            <h2>Suscribite al Newsletter con tu correo:</h2>
+            <input id="mail" type="text">
+            <input id="suscribir" type="button" value="Suscribir">
         </div>
         <div class="copyright">
             <p>Copyright &copy; 2022 Todos los derechos reservados</p>
@@ -91,6 +96,8 @@
         <i class="fa-solid fa-angle-up"></i>
     </a>
     <!-- navbar finaliza -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="servicios.js"></script>
 </body>
 </html>
